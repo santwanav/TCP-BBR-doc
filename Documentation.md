@@ -133,6 +133,7 @@ working with the new kernel.
 
 You can always verify the kernel with `uname -r`.
 
+<<<<<<< HEAD
 ```
 $ uname -r
 4.16.13
@@ -148,4 +149,8 @@ Credits and Sources
 	 Article](https://medium.freecodecamp.org/building-and-installing-the-latest-linux-kernel-from-source-6d8df5345980)
 3. [Tedfelix Article](http://tedfelix.com/linux/kernel-build.html)
 4. Fraida Fund, NYU
+=======
+
+
+>>>>>>> bb6be1d87bea505e970d80944b0876abb29bbc01
 
