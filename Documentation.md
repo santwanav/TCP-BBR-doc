@@ -89,7 +89,7 @@ $ sudo make menuconfig
 ```
 
 The command will open a TUI (Text-Based UI) for the configuration, with directions on
-the top to select/de-select. After you are done with choosing your
+the top to select/de-select.I chose the default configuration for now. After you are done with choosing your
 configuration, save the configuration and exit.
 This generates a `.config` file.
 
