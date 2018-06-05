@@ -66,14 +66,14 @@ $ du -ch
 
 The command `du` will tell you about the size of the folder in a format
 depending on the flags specified. The `h` flag will produce the result
-in *human-readable* format (eg. 200K, 960M). The `c` flag gives the
+in *human-readable* format (e.g. 200K, 960M). The `c` flag gives the
 grand-total of all the contents of the folder. For more info on the
 options available to the command, do `man du`.
 
 In my case, it was 919M. Also note that the kernel size will vary based
-on the drivers and cofiguration you choose for your kernel, the command
+on the drivers and configuration you choose for your kernel, the command
 for which is explained later. It is recommended to make proper space
-(atleast 4GB) in your disk before building the kernel.
+(at least 4GB) in your disk before building the kernel.
 
 The steps from now focus on building the kernel.
 
@@ -120,15 +120,27 @@ Now the .config file and the kernel needs to be copied to the
 $ sudo make install -j 16
 ```
 
-We have compiled the kernel succesfully. Now to let the system use the
+We have compiled the kernel successfully. Now to let the system use the
 new kernel when it boots up next, we need to update the grub.
 
 ```
 $ sudo update-initramfs -c -k 4.16.13
 $ sudo update-grub
 ```
+*NOTE: While building the net-next, the version is* `4.17.0-rc+`. *Make
+sure to use the right kernel version which can also be known from the
+last command used i.e* `sudo make install`, the initial output for which is
+given here.
 
-After the above commands run suceesfully, reboot the system to start
+```
+sh ./arch/x86/boot/install.sh 4.17.0-rc7+ arch/x86/boot/bzImage \
+System.map "/boot"
+```
+
+*You can check the version here. [NOTE ENDS HERE]*
+
+
+After the above commands run successfully, reboot the system to start
 working with the new kernel.
 
 You can always verify the kernel with `uname -r`.
@@ -137,7 +149,7 @@ You can always verify the kernel with `uname -r`.
 $ uname -r
 4.16.13
 ```
-This shows that the kernel has been succesfully compiled and running.
+This shows that the kernel has been successfully compiled and running.
 
 Cheers!!
 
