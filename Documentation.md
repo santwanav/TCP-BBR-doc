@@ -27,10 +27,27 @@ The following command will download a `tar.xz` archives for you. To extract the 
 ```
 $ tar -xf linux-4.16.13.tar.xz
 ```
-
-*NOTE : You will have to write your own version instead of 4.16.13.*
-
 The command will extract the contents of the tar file.
+
+*NOTE: You will have to write your own version instead of 4.16.13.*
+
+*NOTE: To install the* `net-next`, *I used* `git clone` *instead of
+getting the kernel folder. The command for same is given below. Also
+note that you are not required to go through the extract the archive
+steps.*
+
+```
+git clone https://git.kernel.org/pub/scm/linux/kernel/git/davem/net-next.git
+```
+This might be a huge file and if you are working with the kernel for
+experimental purposes and do not intend to work as a Linux Kernel
+Developer, you might want to run it with the `--depth=1` option.
+
+```
+git clone --depth=1 https://git.kernel.org/pub/scm/linux/kernel/git/davem/net-next.git
+```
+The `--depth` option is used with `git clone` to create a shallow clone
+with its history truncated.
 
 *NOTE: Before proceeding make sure you have enough space in your disk to
 complete the kernel build.*
@@ -159,5 +176,6 @@ Credits and Sources
 2. [FreeCodeCamp
 	 Article](https://medium.freecodecamp.org/building-and-installing-the-latest-linux-kernel-from-source-6d8df5345980)
 3. [Tedfelix Article](http://tedfelix.com/linux/kernel-build.html)
+4. [Git Clone](https://git-scm.com/docs/git-clone)
 4. Fraida Fund, NYU
 
