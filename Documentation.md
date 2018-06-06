@@ -106,7 +106,16 @@ $ sudo make menuconfig
 ```
 
 The command will open a TUI (Text-Based UI) for the configuration, with directions on
-the top to select/de-select.I chose the default configuration for now. After you are done with choosing your
+the top to select/de-select. The configuration I chose for TCP_BBR
+experiment is described below.
+
+`Networking Support --> Networking Options --> TCP: Advanced Congestion
+Control --> BBR TCP`
+
+*NOTE: You could also make TCP as the default congestion control but I
+decided it to do it manually later.
+
+After you are done with choosing your
 configuration, save the configuration and exit.
 This generates a `.config` file.
 
