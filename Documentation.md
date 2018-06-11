@@ -113,7 +113,8 @@ experiment is described below.
 Control --> BBR TCP`
 
 *NOTE: You could also make TCP as the default congestion control but I
-decided it to do it manually later.
+decided it to do it manually later.*
+
 
 After you are done with choosing your
 configuration, save the configuration and exit.
