@@ -1,5 +1,66 @@
 # Instrumenting BBR
 
+## Using iperf3
+
+iperf3 is a network performance measurement tool. Install the iperf3
+using the following commands
+Before installing the iperf3, `update` your system using the following
+command:
+
+```
+$ sudo apt-get update
+```
+
+Followed by the command to install `iperf3`:
+
+```
+$ sudo apt-get istall iperf3
+```
+
+To run the TCP connection over both the machines, follow the given
+steps.
+
+To run a connection, one machine needs to be the `server` while the
+other needs to be the `client`.
+
+To run the machine as the `server` run the following command:
+
+```
+$ iperf3 -s -i 60
+```
+
+The `-s` tag will make the machine run as a `server`. The `-i` flag will
+specify the interval at which the reports for the throughput shown.
+
+Next you need to know the address of the server to run the other machine
+as `client`. To know the ip address of the `server`, run the following
+command on the machine you wish to run as the `server`
+
+```bash
+ifconfig
+```
+
+and check for the `ethernet` ip address, which in my case was
+`10.0.0.101`
+
+On the other machine (which you wish to run as `client`), run the given
+command:
+
+```bash
+$ iperf3 -c 10.0.0.101 -i 0.1 -C bbr -t 6000
+```
+
+If running this command gives an error like the one given below:
+
+```
+iperf3: error - unable to set TCP_CONGESTION: Supplied congestion control algorithm not supported on this host
+```
+
+Then recall that during the kernel build we did not specify BBR as the
+default congestion control, so now we need to load the kernel module for
+`tcp_bbr`, using the following command:
+
+
 ## Using ss
 
 We can use `ss` to get information about the kernel about a current TCP
@@ -63,7 +124,7 @@ $ sudo make install
 ```
 
 When we ran it, we noticed that the version of `ss` installed system
-wide was still the old one (which we could see from running `ss -v`), 
+wide was still the old one (which we could see from running `ss -v`),
 suggesting a problem with the last step - so we ran
 
 ```
@@ -71,7 +132,7 @@ $ cd misc
 $ sudo make install
 ```
 
-and then verified again. The output of 
+and then verified again. The output of
 
 ```
 $ /sbin/ss -v
