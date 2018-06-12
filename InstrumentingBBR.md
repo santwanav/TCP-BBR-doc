@@ -8,7 +8,7 @@ socket.
 For example, the following command:
 
 ```
-watch -n 0.1 'echo -n $(date +%s.%N) | tee -a /tmp/test.txt; ss -eipn dst 10.0.0.101 | grep bbr | tee -a /tmp/test.txt'
+$ watch -n 0.1 'echo -n $(date +%s.%N) | tee -a /tmp/test.txt; ss -eipn dst 10.0.0.101 | grep bbr | tee -a /tmp/test.txt'
 ```
 
 which will:
@@ -30,7 +30,7 @@ However, we noticed that more recent versions of `ss` can also print
 BBR-specific variables such as BBR's estimate of bandwidth and RTT,
 pacing gain, and CWND gain:
 
-```
+```c
         if (s->bbr_info) {
                 __u64 bw;
 
@@ -54,12 +54,12 @@ pacing gain, and CWND gain:
 To use a more recent `ss`, download version 4.17:
 
 ```
-wget https://mirrors.edge.kernel.org/pub/linux/utils/net/iproute2/iproute2-4.17.0.tar.gz
-tar -xzvf iproute2-4.17.0.tar.gz
-cd iproute2-4.17.0
-./configure
-make
-sudo make install
+$ wget https://mirrors.edge.kernel.org/pub/linux/utils/net/iproute2/iproute2-4.17.0.tar.gz
+$ tar -xzvf iproute2-4.17.0.tar.gz
+$ cd iproute2-4.17.0
+$ ./configure
+$ make
+$ sudo make install
 ```
 
 When we ran it, we noticed that the version of `ss` installed system
@@ -67,14 +67,14 @@ wide was still the old one (which we could see from running `ss -v`),
 suggesting a problem with the last step - so we ran
 
 ```
-cd misc
-sudo make install
+$ cd misc
+$ sudo make install
 ```
 
 and then verified again. The output of 
 
 ```
-/sbin/ss -v
+$ /sbin/ss -v
 ```
 
 should be
@@ -96,8 +96,30 @@ Now a line of output looks like:
 To get this into a nice format for plotting, we can run
 
 ```
-echo "ts,rto,rtt,rttvar,mtu,pmtu,rcvmss,advmss,cwnd,ssthresh,bytes_acked,segs_out,segs_in,data_segs_out,bbr_bw,bbr_min_rtt,bbr_pacing_gain,bbr_cwnd_gain,send,last_recv,pacing_rate,delivery_rate,busy,unacked" > /tmp/stats.csv
-awk -F'[\t/,:() ]'  'BEGIN {OFS=","} {print $1,$10,$12,$13,$15,$17,$19,$21,$23,$25,$27,$29,$31,$33,$37,$39,$41,$43,$46,$48,$50,$52,$54,$56}' /tmp/test.txt >> /tmp/stats.csv
-sed -i 's/Mbps/e6/g' /tmp/stats.csv
-sed -i 's/Kbps/e3/g' /tmp/stats.csv
+$ echo "ts,rto,rtt,rttvar,mtu,pmtu,rcvmss,advmss,cwnd,ssthresh,bytes_acked,segs_out,segs_in,data_segs_out,bbr_bw,bbr_min_rtt,bbr_pacing_gain,bbr_cwnd_gain,send,last_recv,pacing_rate,delivery_rate,busy,unacked" > /tmp/stats.csv
+$ awk -F'[\t/,:() ]'  'BEGIN {OFS=","} {print $1,$10,$12,$13,$15,$17,$19,$21,$23,$25,$27,$29,$31,$33,$37,$39,$41,$43,$46,$48,$50,$52,$54,$56}' /tmp/test.txt >> /tmp/stats.csv
+$ sed -i 's/Mbps/e6/g' /tmp/stats.csv
+$ sed -i 's/Kbps/e3/g' /tmp/stats.csv
 ```
+
+## Installing and Using R
+
+You can install R through your terminal using the following command:
+
+```
+$ sudo apt-get install r-base
+```
+
+The you can simply start working with R typing the command `R` in your
+terminal.
+
+Once you are in the R terminal, you can run the following commands to
+make your plot.
+
+```
+> myData <- read.csv("/tmp/stats.csv")
+> plot(myData$bbr_bw,mydata$rtt)
+```
+
+Please note that the format for the second command is `plot(x,y)`.
+
