@@ -1,4 +1,20 @@
 # Setting Up and Configuring the latest linux kernel
+
+## Pre-reqs for installing the kernel
+
+## Begin building the Kernel
+```
+$ sudo apt update
+$ sudo apt install libelf-dev
+$ sudo apt install libssl-dev
+$ sudo apt install libncurses-dev
+$ sudo apt install flex
+$ sudo apt install bison
+$ sudo apt install pkg-config
+$ sudo apt install gcc
+```
+## Begin building the Kernel
+
 Welcome! This is the documentation of the steps I followed to
 successfully compile a kernel.
 Before actually diving into the kernel install, check the version which

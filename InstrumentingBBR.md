@@ -36,8 +36,8 @@ Next you need to know the address of the server to run the other machine
 as `client`. To know the ip address of the `server`, run the following
 command on the machine you wish to run as the `server`
 
-```bash
-ifconfig
+```
+$ ifconfig
 ```
 
 and check for the `ethernet` ip address, which in my case was
@@ -46,7 +46,7 @@ and check for the `ethernet` ip address, which in my case was
 On the other machine (which you wish to run as `client`), run the given
 command:
 
-```bash
+```
 $ iperf3 -c 10.0.0.101 -i 0.1 -C bbr -t 6000
 ```
 
@@ -60,6 +60,11 @@ Then recall that during the kernel build we did not specify BBR as the
 default congestion control, so now we need to load the kernel module for
 `tcp_bbr`, using the following command:
 
+```
+$ sudo modprobe tcp_bbr
+```
+
+and run the previous command again, it should work.
 
 ## Using ss
 
