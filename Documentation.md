@@ -2,7 +2,9 @@
 
 ## Pre-reqs for installing the kernel
 
-## Begin building the Kernel
+Following are the few things you should have installed on your machine,
+before starting to build your kernel.
+
 ```
 $ sudo apt update
 $ sudo apt install libelf-dev
