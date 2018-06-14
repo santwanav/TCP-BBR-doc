@@ -162,10 +162,10 @@ Now a line of output looks like:
 To get this into a nice format for plotting, we can run
 
 ```
-$ echo "ts,rto,rtt,rttvar,mtu,pmtu,rcvmss,advmss,cwnd,ssthresh,bytes_acked,segs_out,segs_in,data_segs_out,bbr_bw,bbr_min_rtt,bbr_pacing_gain,bbr_cwnd_gain,send,last_recv,pacing_rate,delivery_rate,busy,unacked" > /tmp/stats.csv
-$ awk -F'[\t/,:() ]'  'BEGIN {OFS=","} {print $1,$10,$12,$13,$15,$17,$19,$21,$23,$25,$27,$29,$31,$33,$37,$39,$41,$43,$46,$48,$50,$52,$54,$56}' /tmp/test.txt >> /tmp/stats.csv
-$ sed -i 's/Mbps/e6/g' /tmp/stats.csv
-$ sed -i 's/Kbps/e3/g' /tmp/stats.csv
+echo "ts,rto,rtt,rttvar,mtu,pmtu,rcvmss,advmss,cwnd,ssthresh,bytes_acked,segs_out,segs_in,data_segs_out,bbr_bw,bbr_min_rtt,bbr_pacing_gain,bbr_cwnd_gain,send,last_recv,pacing_rate,delivery_rate,busy,unacked" > /tmp/stats.csv
+awk -F'[\t/,:() ]'  'BEGIN {OFS=","} {print $1,$10,$12,$13,$15,$17,$19,$21,$23,$25,$27,$29,$31,$33,$37,$39,$41,$43,$46,$48,$50,$52,$54,$56}' /tmp/test.txt >> /tmp/stats.csv
+sed -i 's/Mbps/e6/g' /tmp/stats.csv
+sed -i 's/Kbps/e3/g' /tmp/stats.csv
 ```
 
 ## Installing and Using R
