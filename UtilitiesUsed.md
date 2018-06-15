@@ -24,14 +24,16 @@ about TCP than `netstat`.
 
 ```
 iperf
+netem
+tbf
+tc
 ```
+
 
 ## Documentation Utilities
 
 ```
 pandoc
-```
-```
 beamer
 ```
 
@@ -39,15 +41,16 @@ beamer
 
 ```
 screen
-```
-
-```
 awk
-```
-
-```
 sed
 ```
+The must learn tool!
+
+```
+The power of $
+```
+
+
 # Terminal Used
 
 ```
