@@ -184,6 +184,28 @@ System.map "/boot"
 
 *You can check the version here. [NOTE ENDS HERE]*
 
+*NOTE:It may actually not be required to run the last two commands i.e*
+`sudo update-grub` and `sudo update-initramfs <version-num>`. *Look for
+the following lines in the output of* `sudo make install -j $(nproc)`.
+
+```
+update-initramfs: Generating /boot/initrd.img-4.17.0+
+run-parts: executing /etc/kernel/postinst.d/zz-update-grub 4.17.0+ /boot/vmlinuz-4.17.0+
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-4.17.0+
+Found initrd image: /boot/initrd.img-4.17.0+
+Found linux image: /boot/vmlinuz-4.17.0+.old
+Found initrd image: /boot/initrd.img-4.17.0+
+Found linux image: /boot/vmlinuz-4.4.0-116-generic
+Found initrd image: /boot/initrd.img-4.4.0-116-generic
+Found memtest86+ image: /boot/memtest86+.elf
+Found memtest86+ image: /boot/memtest86+.bin
+done
+```
+*This denotes that the above mentioned two commands have already been
+executed and you do not need to run them again. Skip to rebooting the
+system.*
+
 
 After the above commands run successfully, reboot the system to start
 working with the new kernel.
