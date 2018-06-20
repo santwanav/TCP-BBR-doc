@@ -205,5 +205,6 @@ Credits and Sources
 	 Article](https://medium.freecodecamp.org/building-and-installing-the-latest-linux-kernel-from-source-6d8df5345980)
 3. [Tedfelix Article](http://tedfelix.com/linux/kernel-build.html)
 4. [Git Clone](https://git-scm.com/docs/git-clone)
-4. Fraida Fund, NYU
+5. [Cloudlabs](https://www.cloudlab.us/files/cloudlab-overview.pdf)
+6. Fraida Fund, NYU
 
