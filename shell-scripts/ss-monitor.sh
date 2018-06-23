@@ -1,6 +1,6 @@
 #! /bin/bash
 
-echo "ts,rto,rtt,rttvar,mss,pmtu,rcvmss,advmss,cwnd,bytes_acked,segs_out,segs_in,data_segs_out,bbr_bw,bbr_min_rtt,bbr_pacing_gain,bbr_cwnd_gain,send,pacing_rate,delivery_rate" > "$1"
+echo "ts,rto,rtt,rttvar,mss,pmtu,rcvmss,advmss,cwnd,bytes_acked,segs_out,segs_in,data_segs_out,bbr_bw,bbr_min_rtt,bbr_pacing_gain,bbr_cwnd_gain,send,pacing_rate,delivery_rate,busy" > "$1"
 
 while :
 do
