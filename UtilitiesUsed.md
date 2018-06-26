@@ -16,25 +16,46 @@ working directory, and nonrecursive searches read standard input. By default, gr
 
 ## Linux Network Utilities
 
-```
-ss
-```
+
+###  ss
+
 ss is used to monitor the network statistics, giving more information
 about TCP than `netstat`.
 
-```
-iperf
-```
+
+### iperf
+
+#### Installing the iperf3 from the source
+*NOTE: This has been taken from a blog, the link for which is given the
+resources section.*
 
 ```
-netem
+$ git clone https://github.com/esnet/iperf.git
 ```
+
+In the `iperf` directory, execute the following commands
+
+```
+$ ./bootstrap.sh
+$ ./configure
+$ make
+$ sudo make install
+$ sudo ldconfig
+```
+
+This will install the `iperf` to your machine. You can check the version by the following command:
+
+
+
+### netem
+
 `netem` allows to emulate network conditions similar to those of a
 wide-area networks. The main purpose for my usage of `netem` was to
 emulate `packet loss` and `delay` in the network conditions. The full
 documentation of the same can be found
 [here](https://wiki.linuxfoundation.org/networking/netem)
 
+```
 tbf
 tc
 ```
