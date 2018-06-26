@@ -1,12 +1,53 @@
 library(ggplot2)
 
-dir <- "~/Desktop/IITK/Summer\'18-NYO/Actual\ Work/TCP-BBR-project-documentation/results/delay20ms/"
+dir <- "~/Desktop/IITK/Summer\'18-NYO/Actual\ Work/TCP-BBR-project-documentation/results/delay10ms/"
 datm <- read.csv(paste(dir, "impairstats.csv", sep=""))
 
 a <- ggplot(datm)
 a <- a + geom_line(aes(x=ts, y=backlog_in_bytes), colour="blue")
-a <- a + scale_x_continuous("Time (s)") #, limits=c(min(dat$ts), min(dat$ts)+20))
+a <- a + scale_x_continuous("Time (s)", limits=c(min(dat$ts), min(dat$ts)+20))
 a <- a + scale_y_continuous("Backlog In Bytes")
-png(paste(dir, "ByteBacklog.png", sep=""))
+png(paste(dir, "byte_backlog_20secs.png", sep=""))
 print(a)
+dev.off()
+
+b <- ggplot(datm)
+b <- b + geom_line(aes(x=ts, y=backlog_in_bytes), colour="blue")
+b <- b + scale_x_continuous("Time (s)", limits=c(min(dat$ts), min(dat$ts)+10))
+b <- b + scale_y_continuous("Backlog In Bytes")
+png(paste(dir, "byte_backlog_10secs.png", sep=""))
+print(b)
+dev.off()
+
+c <- ggplot(datm)
+c <- c + geom_line(aes(x=ts, y=backlog_in_bytes), colour="blue")
+c <- c + scale_x_continuous("Time (s)")
+c <- c + scale_y_continuous("Backlog In Bytes")
+png(paste(dir, "byte_backlog.png", sep=""))
+print(c)
+dev.off()
+
+d <- ggplot(datm)
+d <- d + geom_line(aes(x=ts, y=backlog_in_packets), colour="blue")
+d <- d + scale_x_continuous("Time (s)")
+d <- d + scale_y_continuous("Backlog In Terms of Packets")
+png(paste(dir, "packet_backlog.png", sep=""))
+print(d)
+dev.off()
+
+
+e <- ggplot(datm)
+e <- e + geom_line(aes(x=ts, y=backlog_in_packets), colour="blue")
+e <- e + scale_x_continuous("Time (s)", limits=c(min(datm$ts), min(datm$ts)+10))
+e <- e + scale_y_continuous("Backlog In Terms of Packets")
+png(paste(dir, "packet_backlog_10sec.png", sep=""))
+print(e)
+dev.off()
+
+f <- ggplot(datm)
+f <- f + geom_line(aes(x=ts, y=backlog_in_packets), colour="blue")
+f <- f + scale_x_continuous("Time (s)", limits=c(min(datm$ts), min(dat$ts)+20))
+f <- f + scale_y_continuous("Backlog In Terms of Packets")
+png(paste(dir, "packet_backlog_20sec.png", sep=""))
+print(f)
 dev.off()

@@ -24,7 +24,17 @@ about TCP than `netstat`.
 
 ```
 iperf
+```
+
+```
 netem
+```
+`netem` allows to emulate network conditions similar to those of a
+wide-area networks. The main purpose for my usage of `netem` was to
+emulate `packet loss` and `delay` in the network conditions. The full
+documentation of the same can be found
+[here](https://wiki.linuxfoundation.org/networking/netem)
+
 tbf
 tc
 ```
