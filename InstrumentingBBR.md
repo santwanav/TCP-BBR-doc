@@ -43,6 +43,10 @@ $ ifconfig
 and check for the `ethernet` ip address, which in my case was
 `10.0.0.101`
 
+*NOTE: The command* `ifconifg` *might not always run on every distros of
+linux. You can try the following command,* `ip a` *which runs on all the
+distros of linux.*
+
 On the other machine (which you wish to run as `client`), run the given
 command:
 
