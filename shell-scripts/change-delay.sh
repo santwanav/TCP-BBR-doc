@@ -24,9 +24,9 @@ do
 #	echo $i
 	echo "delay ${delays[$i]}$ms"
 	sudo tc qdisc del dev "$interface1" root handle 1:0
-	sudo tc qdisc replace dev "$interface1" root handle 1:0 tbf rate 100mbit limit 1.25Mb burst 32kB; sudo tc qdisc add dev "$interface1" parent 1:1 handle 10: netem delay "${delays[$i]}$ms"
+	sudo tc qdisc replace dev "$interface1" root handle 1:0 tbf rate 10mbit limit 1.25Mb burst 32kB; sudo tc qdisc add dev "$interface1" parent 1:1 handle 10: netem delay "${delays[$i]}$ms"
 	sudo tc qdisc del dev "$interface2" root handle 1:0
-	sudo tc qdisc replace dev "$interface2" root handle 1:0 tbf rate 100mbit limit 1.25Mb burst 4kB; sudo tc qdisc add dev $interface2 parent 1:1 handle 10: netem delay "${delays[$i]}$ms"
+	sudo tc qdisc replace dev "$interface2" root handle 1:0 tbf rate 10mbit limit 1.25Mb burst 4kB; sudo tc qdisc add dev $interface2 parent 1:1 handle 10: netem delay "${delays[$i]}$ms"
 	i=$((i+1))
 	sleep 10
 done
