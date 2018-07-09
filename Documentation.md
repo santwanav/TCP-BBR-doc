@@ -108,7 +108,9 @@ options available to the command, do `man du`.
 In my case, it was 919M. Also note that the kernel size will vary based
 on the drivers and configuration you choose for your kernel, the command
 for which is explained later. It is recommended to make proper space
-(at least 4GB) in your disk before building the kernel.
+(at least 4GB) in your disk before building the kernel. The instructions
+for making extra space in your system can be found
+[here](https://github.com/santwanav/TCP-BBR-project-documentation/blob/master/MakeExtraSpace.md#make-extra-disk-space-for-kernel-build)
 
 The steps from now focus on building the kernel.
 
