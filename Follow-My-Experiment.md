@@ -27,8 +27,8 @@ recreate my experiment.
 * Now the next step is to apply the network impairment. The commands and
 		other useful information for the same can be found
 		[here](https://github.com/santwanav/TCP-BBR-project-documentation/blob/master/NetworkImpairment.md#add-delay-rate-limit-or-both)
-* If you wish to troubleshoot, refer to [this]() page. If the issue
-		still persists, [contact me]()
+* If you wish to troubleshoot, refer to [this](https://github.com/santwanav/TCP-BBR-project-documentation/blob/master/Troubleshooting.md#trouble-shooting) link. If the issue
+		still persists, contact me.
 
 
 ## Contact-me
