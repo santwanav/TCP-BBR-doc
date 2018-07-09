@@ -111,39 +111,14 @@ pacing gain, and CWND gain:
                 out(")");
       }
 ```
-### Installing ss
 
-Before installing `ss`, run this command to install a dependency. `sudo
-apt install libmnl-dev`. (This
-is not essentially a *dependency*, but is recommended for *error
-support*)
-To use a more recent `ss`, download version 4.17:
-
-```
-$ wget https://mirrors.edge.kernel.org/pub/linux/utils/net/iproute2/iproute2-4.17.0.tar.gz
-$ tar -xzvf iproute2-4.17.0.tar.gz
-$ cd iproute2-4.17.0
-$ ./configure
-$ make
-$ sudo make install
-```
-
-When we ran it, we noticed that the version of `ss` installed system
-wide was still the old one (which we could see from running `ss -v`),
-suggesting a problem with the last step - so we ran
-
-```
-$ cd misc
-$ sudo make install
-```
-
-and then verified again. The output of
+To install the latest version of `ss`, follow the following instruction.
+You should confirm the version of the same using the following command:
 
 ```
 $ /sbin/ss -v
 ```
-
-should be
+which should give the following output
 
 ```
 ss utility, iproute2-ss180608
@@ -178,13 +153,3 @@ $ sudo apt-get install r-base
 
 The you can simply start working with R typing the command `R` in your
 terminal.
-
-Once you are in the R terminal, you can run the following commands to
-make your plot.
-
-```
-> myData <- read.csv("/tmp/stats.csv")
-> plot(myData$bbr_bw,mydata$rtt)
-```
-
-Please note that the format for the second command is `plot(x,y)`.

@@ -42,11 +42,8 @@ $ cd misc
 $ sudo make install
 ```
 
-and then verified again. The output of
-
-```
-$ /sbin/ss -v
-```
+We noticed that the terminal still uses the older version of ss. Please
+send a PR if you find a fix.
 
 ### iperf
 
