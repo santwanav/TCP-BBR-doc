@@ -135,12 +135,13 @@ while saving your file to avoid any hassle:
 ```
 :w !sudo tee %
 ```
+and then exit the file.
 
 * If your ssh terminal is hung, press `enter` followed by `~` and `.`.
 		It closes the ssh terminal and you can begin anew.
 
-and then exit the file.
 Resources:
+
 * [Tee](https://www.computerhope.com/unix/utee.html)
 * [Grep](http://man7.org/linux/man-pages/man1/grep.1.html)
 * [ss](https://linux.die.net/man/8/ss)
