@@ -120,7 +120,12 @@ pacing gain, and CWND gain:
                 out(")");
       }
 ```
+### Installing ss
 
+Before installing `ss`, run this command to install a dependency. `sudo
+apt install libmnl-dev`. (This
+is not essentially a *dependency*, but is recommended for *error
+support*)
 To use a more recent `ss`, download version 4.17:
 
 ```
