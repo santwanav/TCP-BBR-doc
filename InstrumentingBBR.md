@@ -4,18 +4,9 @@
 
 iperf3 is a network performance measurement tool. Install the iperf3
 using the following commands
-Before installing the iperf3, `update` your system using the following
-command:
 
-```
-$ sudo apt-get update
-```
-
-Followed by the command to install `iperf3`:
-
-```
-$ sudo apt-get istall iperf3
-```
+Follow this
+[link](https://github.com/santwanav/TCP-BBR-project-documentation/blob/master/UtilitiesUsed.md#installing-the-iperf3-from-the-source) to install `iperf`.
 
 To run the TCP connection over both the machines, follow the given
 steps.
