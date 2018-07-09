@@ -128,13 +128,16 @@ was* `fish`.
 
 # Some tips
 
-Some files require to be edited in the sudo mode.If you forgot to open
+* Some files require to be edited in the sudo mode.If you forgot to open
 the file using sudo in `vim` and started editing it, use the following command
 while saving your file to avoid any hassle:
 
 ```
 :w !sudo tee %
 ```
+
+* If your ssh terminal is hung, press `enter` followed by `~` and `.`.
+		It closes the ssh terminal and you can begin anew.
 
 and then exit the file.
 Resources:
