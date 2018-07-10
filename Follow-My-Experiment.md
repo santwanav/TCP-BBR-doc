@@ -29,7 +29,8 @@ recreate my experiment.
 		[here](https://github.com/santwanav/TCP-BBR-project-documentation/blob/master/NetworkImpairment.md#add-delay-rate-limit-or-both)
 * If you wish to troubleshoot, refer to [this](https://github.com/santwanav/TCP-BBR-project-documentation/blob/master/Troubleshooting.md#trouble-shooting) link. If the issue
 		still persists, contact me.
-
+* To-do list. Please send a PR if you fix anyone of them or are able to
+		get something running.
 
 ## Contact-me
 
