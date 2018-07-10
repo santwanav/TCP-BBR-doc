@@ -113,11 +113,11 @@ Terminator is a terminal which I liked for its split feature, both
 horizontally and vertically.
 
 Some of the shortcuts for terminator are as follows:
-* `Ctrl+D`: Close the current terminal.
-* `Ctrl+X`: Toggle between maximize the current terminal and restore all
+* `Ctrl`+`D`: Close the current terminal.
+* `Ctrl`+`Shift`+`X`: Toggle between maximize the current terminal and restore all
 the terminals.
-* `Ctrl+Shift+E`: Split the terminal vertically.
-* `Ctrl+Shift+O`: Split the terminal horizontally.
+* `Ctrl`+`Shift`+`E`: Split the terminal vertically.
+* `Ctrl`+`Shift`+`O`: Split the terminal horizontally.
 
 # Shell Used
 
