@@ -146,6 +146,17 @@ and then exit the file.
 * If your ssh terminal is hung, press `enter` followed by `~` and `.`.
 		It closes the ssh terminal and you can begin anew.
 
+* To know the terminal you are running the script in, use the following
+		command:
+```
+readlink /proc/$$/exe
+```
+
+Please note the following command will not run if you are running the
+fish terminal. (Please note that the command was tested only on bash,
+zsh and fish, out of which it does not work with fish because `$$` isn't
+supported in fish.)
+
 Resources:
 
 * [Tee](https://www.computerhope.com/unix/utee.html)
