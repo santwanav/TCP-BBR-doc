@@ -157,6 +157,19 @@ fish terminal. (Please note that the command was tested only on bash,
 zsh and fish, out of which it does not work with fish because `$$` isn't
 supported in fish.)
 
+* Killing/Stopping a process running in background. As we know that
+		using `&` after a command in unix makes a program run in the
+		background. What if we wish to terminate the program. Following ways
+		will help you do so:
+			* Use the command `fg` to bring the process in foreground and then
+					use the `Ctrl+C` as you would do to kill a normal process.
+			* Use the command `jobs` to list all the jobs running in the
+					background and then use `kill %<job-num>`.
+			* Use the process id of the process to kill it using `pkill`. Now
+					how will you find the process id. Following are the ways:
+						* Use the command `ps` with `grep`.
+						* Use the command `pgrep`
+
 Resources:
 
 * [Tee](https://www.computerhope.com/unix/utee.html)
