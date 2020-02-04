@@ -14,6 +14,11 @@ grep
 One of the most useful commands of linux imo. `grep` searches for PATTERN in each FILE. If no FILE is given, recursive searches examine the 
 working directory, and nonrecursive searches read standard input. By default, grep prints the matching lines.
 
+```
+cscope
+```
+Pretty powerful tool for code navigation, specially when working with kernel code.
+
 ## Linux Network Utilities
 
 
